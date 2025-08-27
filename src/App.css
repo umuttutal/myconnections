@@ -1,4 +1,4 @@
-/* Reset */
+n/* Reset */
 * {
   box-sizing: border-box;
 }
@@ -7,7 +7,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: linear-gradient(135deg, #fafaf9 0%, #fffbeb 50%, #fafaf9 100%);
+  background: #a94257;
   color: #333;
   min-height: 100vh;
   display: flex;
@@ -31,6 +31,11 @@ body {
   gap: 1rem;
 }
 
+/* Added header margin-bottom */
+header {
+  margin-bottom: 0rem; /* smaller gap */
+}
+
 header h1 {
   font-family: Georgia, serif;
   font-size: 2.5rem;
@@ -43,57 +48,88 @@ header p {
   text-align: center;
   color: #555;
   font-weight: 600;
+  margin-bottom: 0rem;
 }
 
 .message-area {
-  height: 2rem;
-  text-align: center;
-  font-weight: 700;
-  color: #555;
+  min-height: 1.6rem; /* just enough for one line */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   user-select: none;
+  margin-bottom: 0rem;
+}
+
+.message {
+  background-color: #333;
+  color: white;
+  padding: 0.3rem 0.9rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  animation: fadeOut 2.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .revealed-groups {
   max-height: none !important;
   overflow-y: visible !important;
-  /* optional spacing */
   margin-bottom: 8px;
 }
 
 .group-box {
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
   border: 2px solid #ccc;
-  box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   text-align: center;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   user-select: none;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+.group-box h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.group-box p {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .bg-yellow-100 {
-  background-color: #fef3c7;
-  border-color: #fde68a;
-  color: #78350f;
+  background-color: #f8df6d;
+  border-color: #f8df6d;
+  color: #1d1c1c;
 }
 
 .bg-green-100 {
-  background-color: #dcfce7;
-  border-color: #86efac;
-  color: #166534;
+  background-color: #a1c45b;
+  border-color: #a1c45b;
+  color: #1d1c1c;
 }
 
 .bg-blue-100 {
-  background-color: #dbeafe;
-  border-color: #93c5fd;
-  color: #1e40af;
+  background-color: #b2c4f0;
+  border-color: #b2c4f0;
+  color: #1d1c1c;
 }
 
 .bg-purple-100 {
-  background-color: #ede9fe;
-  border-color: #c4b5fd;
-  color: #5b21b6;
+  background-color: #b981c6;
+  border-color: #b981c6;
+  color: #1d1c1c;
 }
 
 .words-grid {
@@ -104,6 +140,7 @@ header p {
 
 .word-button {
   aspect-ratio: 1 / 1;
+  width: 100%;
   background-color: #f4f4f4;
   border: 2px solid #ccc;
   border-radius: 12px;
@@ -112,11 +149,21 @@ header p {
   text-transform: uppercase;
   user-select: none;
   transition: all 0.2s ease;
-  font-size: 1rem;
   color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  text-align: center;
+  line-height: 1.1;
+  white-space: normal;
+  word-break: break-word;
+  font-size: clamp(0.55rem, 1.5vw, 1rem);
+  flex-direction: column;
 }
 
-.word-button:hover:not(:disabled) {
+/* Hover only on unselected buttons */
+.word-button:hover:not(:disabled):not(.selected) {
   background-color: #e0e0e0;
 }
 
@@ -188,7 +235,39 @@ header p {
   cursor: not-allowed;
 }
 
+.submit-button.reveal {
+  background-color: #a94257; /* e.g., amber */
+  color: white;
+}
+
 @keyframes shake {
   0%, 20%, 40%, 60%, 80%, 100% { transform: translateX(0); }
   10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
+    min-height: 100vh;
+  }
+
+  .word-button {
+    font-size: 0.7rem;
+    padding: 0.3rem;
+    aspect-ratio: 1 / 1;
+    line-height: 1;
+    min-width: 0;
+  }
+
+  .game-wrapper {
+    padding: 1rem;
+  }
+
+  .mistakes span {
+    font-size: 0.75rem;
+  }
 }
