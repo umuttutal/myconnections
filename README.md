@@ -1,7 +1,3 @@
-# Connections-Style Game
+# a personalized connections game inspired by NYT  
 
-Play a personalized connections game inspired by NYT!  
-
-[Try it here](https://umuttutal.github.io/myconnections/)
-
-Enjoy!
+# [try it here](https://umuttutal.github.io/myconnections/)
