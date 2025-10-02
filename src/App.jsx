@@ -5,10 +5,10 @@ const slugify = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, "_");
 
 const puzzleData = {
   groups: [
-    { title: "Words from Pulp songs", difficulty: 1, words: ["Common", "Disco", "Skirt", "Italia"] },
-    { title: "Elements of Station Eleven", difficulty: 2, words: ["King Lear", "Prophet", "Comic Book", "Symphony"] },
-    { title: "Where we love to drink", difficulty: 3, words: ["Stairs", "Roof", "Pub", "Park"] },
-    { title: "Elkiran family", difficulty: 4, words: ["Idyll", "Alexander", "Fire", "Cause"] },
+    { title: "Weirdass deepsea fish", difficulty: 1, words: ["Dumbo Octopus", "Sea Angel", "Cookiecutter", "Barreleye"] },
+    { title: "____ box 's from your life <3", difficulty: 2, words: ["Glove", "Toy", "Mystery", "Heart-Shaped"] },
+    { title: "Copycats of Özge's hair, never as beautiful tho", difficulty: 1, words: ["Hela", "Loki", "Snape", "Kylo"] },
+    { title: "Famous black cats", difficulty: 4, words: ["Kiko", "Sylvester", "Felicia", "Pepito"] },
   ],
   difficultyColors: {
     1: "bg-yellow-100 border-yellow-200 text-yellow-900",
