@@ -7,7 +7,7 @@ const puzzleData = {
   groups: [
     { title: "Weirdass deepsea fish", difficulty: 1, words: ["Dumbo Octopus", "Sea Angel", "Cookiecutter", "Barreleye"] },
     { title: "____ box 's from your life <3", difficulty: 2, words: ["Glove", "Toy", "Mystery", "Heart-Shaped"] },
-    { title: "Copycats of Özge's hair, never as beautiful tho", difficulty: 1, words: ["Hela", "Loki", "Snape", "Kylo"] },
+    { title: "Copycats of Özge's hair, never as beautiful tho", difficulty: 3, words: ["Hela", "Loki", "Snape", "Kylo"] },
     { title: "Famous black cats", difficulty: 4, words: ["Kiko", "Sylvester", "Felicia", "Pepito"] },
   ],
   difficultyColors: {
