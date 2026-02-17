@@ -1,3 +1,3 @@
-# a personalized connections game inspired by NYT  
+#### a personalized connections game inspired by NYT  
 
-# [try it here](https://umuttutal.github.io/myconnections/)
+#### [try it here](https://umuttutal.github.io/myconnections/)
